@@ -1,0 +1,2 @@
+std::cout << std::endl << std::endl << std::endl;
+g++ -o run sp_test_case2.cpp
