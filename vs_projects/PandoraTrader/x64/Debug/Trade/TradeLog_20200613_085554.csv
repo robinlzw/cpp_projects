@@ -1,0 +1,4 @@
+LocalTime,Type,Symbol,ClientOrderID,ExchangeOrderID,ExchangeTradeID/UserProductInfo,Price/YdPosition,OrigionVolume/Position,TradedVolume/TdPosition,Side,OpenClose,OrderType,InsertTime,CancelTime,Status,Text
+20200613_08:55:55,MSG,,,,,,,,,,,,,,Authenticate:正确
+20200613_08:55:56,MSG,,,,,,,,,,,,,, Login:CTP:不合法的登录
+20200613_08:58:13,MSG,,,,,,,,,,,,,,DisConnect!!
