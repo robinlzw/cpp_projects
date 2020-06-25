@@ -6,10 +6,14 @@ Rectangle {
     anchors.fill: parent
     color: "#87CEFA"
 
+    function createTable(arrayData) {
+        myTable.updateColumn2Table(arrayData);
+    }
+
     signal setNewNaviPoint(string naviPointName, int i, int j)
 
     TableView{
-        id: tableView
+        id: myTable
         width: parent.width
         height: parent.height
         anchors.fill: parent
@@ -67,29 +71,6 @@ Rectangle {
             }
         }
 
-        TableViewColumn {
-            role: 'recordId'
-            title: "序号"
-            width: 64
-        }
-
-        TableViewColumn {
-            role: 'accountId'
-            title: "账号"
-            width: 256
-        }
-        TableViewColumn {
-            role: 'promptInfo'
-            title: "提示信息"
-            width: 256
-        }
-        TableViewColumn {
-            role: 'proxyInfo'
-            title: "代理信息"
-            width: 256
-        }
-
-
         //更新表格标题列宽度和role
         function updateColumn2Table(arrayData){
             if(arrayData.length != 3){
@@ -108,46 +89,46 @@ Rectangle {
                 return;
             }
 
-            tableview.model.clear(); //先将model里面的数据清空避免在更新的列里面有相同的role直接显示
-            var i,str,count = tableview.columnCount;
+            myTable.model.clear(); //先将model里面的数据清空避免在更新的列里面有相同的role直接显示
+            var i,str,count = myTable.columnCount;
             var sum = new Number(0);
             //求出长度累加和以便于按比例分配列宽
             for(i =0;i<arrayWidth.length;i++){
                 sum += arrayWidth[i];
             }
-            var prefix = 'import QtQuick 2.7;import QtQuick.Controls 1.4;TableViewColumn {width: Math.round(tableview.width *'; //创建TableViewColumn的代码
+            var prefix = 'import QtQuick 2.7;import QtQuick.Controls 1.4;TableViewColumn {width: Math.round(myTable.width *'; //创建TableViewColumn的代码
            //前缀
             //将现在的每列全部删除
             for(i=0;i<count;i++){
-                tableview.removeColumn(0);
+                myTable.removeColumn(0);
             }
             //循环添加TableViewColumn
             for(i=0;i<arrayTitle.length;i++){
                 str = prefix + arrayWidth[i]/sum +");role:\"" + arrayRoles[i] + "\";title:\"" + arrayTitle[i] + "\"}";
-                tableview.addColumn(Qt.createQmlObject(str,tableview,"dynamicSnippet1"));
+                myTable.addColumn(Qt.createQmlObject(str,myTable,"dynamicSnippet1"));
             }
         }
 
         model: ListModel {  //使用ListModel，并加入测试数据
             id: sourceModel
-            ListElement {
-                recordId: 1
-                accountId: 1
-                promptInfo: "test"
-                proxyInfo: "test"
-            }
-            ListElement {
-                recordId: 1
-                accountId: 1
-                promptInfo: "test"
-                proxyInfo: "test"
-            }
-            ListElement {
-                recordId: 1
-                accountId: 1
-                promptInfo: "test"
-                proxyInfo: "test"
-            }
+//            ListElement {
+//                recordId: 1
+//                accountId: 1
+//                promptInfo: "test"
+//                proxyInfo: "test"
+//            }
+//            ListElement {
+//                recordId: 1
+//                accountId: 1
+//                promptInfo: "test"
+//                proxyInfo: "test"
+//            }
+//            ListElement {
+//                recordId: 1
+//                accountId: 1
+//                promptInfo: "test"
+//                proxyInfo: "test"
+//            }
         }
 
         Component.onCompleted: {            
