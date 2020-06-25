@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="action_3D"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>图形(&amp;F)</string>
+    </property>
+    <addaction name="actionLine"/>
+    <addaction name="actionCurve"/>
+    <addaction name="actionCycle"/>
+    <addaction name="actionEllipse"/>
+    <addaction name="actionPolygon"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>变换(&amp;T)</string>
+    </property>
+    <addaction name="actionBigger"/>
+    <addaction name="actionSmaller"/>
+    <addaction name="actionCutter"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>关于(&amp;A)</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_S">
+    <property name="title">
+     <string>选择(&amp;S)</string>
+    </property>
+    <addaction name="actionPen"/>
+    <addaction name="actionBrush"/>
+    <addaction name="actionFiller"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_S"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionPen"/>
+   <addaction name="actionBrush"/>
+   <addaction name="separator"/>
+   <addaction name="actionLine"/>
+   <addaction name="actionCurve"/>
+   <addaction name="actionCycle"/>
+   <addaction name="actionEllipse"/>
+   <addaction name="actionPolygon"/>
+   <addaction name="separator"/>
+   <addaction name="actionCutter"/>
+   <addaction name="actionBigger"/>
+   <addaction name="actionSmaller"/>
+   <addaction name="actionFiller"/>
+   <addaction name="actionDrawCurve"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonFollowStyle</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="action_3D"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionRecall"/>
+  </widget>
+  <widget class="QToolBar" name="toolColorBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/new.png</normaloff>:/icon/icon/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(&amp;N)</string>
+   </property>
+   <property name="toolTip">
+    <string>创建新画布</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/open.png</normaloff>:/icon/icon/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(&amp;O)</string>
+   </property>
+   <property name="toolTip">
+    <string>打开图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/line.png</normaloff>:/icon/icon/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>直线</string>
+   </property>
+   <property name="toolTip">
+    <string>直线</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionCycle">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/cycle.png</normaloff>:/icon/icon/cycle.png</iconset>
+   </property>
+   <property name="text">
+    <string>圆</string>
+   </property>
+   <property name="toolTip">
+    <string>圆</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCurve">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/Curve.png</normaloff>:/icon/icon/Curve.png</iconset>
+   </property>
+   <property name="text">
+    <string>曲线</string>
+   </property>
+   <property name="toolTip">
+    <string>曲线</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionEllipse">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/ellipse.png</normaloff>:/icon/icon/ellipse.png</iconset>
+   </property>
+   <property name="text">
+    <string>椭圆</string>
+   </property>
+   <property name="toolTip">
+    <string>椭圆</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/save.png</normaloff>:/icon/icon/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/clear.png</normaloff>:/icon/icon/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>清屏</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+  <action name="actionRecall">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/recall.png</normaloff>:/icon/icon/recall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recall</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Backspace</string>
+   </property>
+  </action>
+  <action name="actionPen">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/pen.png</normaloff>:/icon/icon/pen.png</iconset>
+   </property>
+   <property name="text">
+    <string>画笔</string>
+   </property>
+   <property name="toolTip">
+    <string>画笔</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionBrush">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/brush.png</normaloff>:/icon/icon/brush.png</iconset>
+   </property>
+   <property name="text">
+    <string>笔刷</string>
+   </property>
+   <property name="toolTip">
+    <string>刷子</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionBigger">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/bigger.png</normaloff>:/icon/icon/bigger.png</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="toolTip">
+    <string>放大</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionSmaller">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/smaller.png</normaloff>:/icon/icon/smaller.png</iconset>
+   </property>
+   <property name="text">
+    <string>缩小</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionPolygon">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/polygon.png</normaloff>:/icon/icon/polygon.png</iconset>
+   </property>
+   <property name="text">
+    <string>多边形</string>
+   </property>
+   <property name="toolTip">
+    <string>多边形</string>
+   </property>
+  </action>
+  <action name="actionFiller">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/fill.png</normaloff>:/icon/icon/fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>填充</string>
+   </property>
+   <property name="toolTip">
+    <string>填充</string>
+   </property>
+  </action>
+  <action name="actionCutter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/cutter.png</normaloff>:/icon/icon/cutter.png</iconset>
+   </property>
+   <property name="text">
+    <string>裁剪</string>
+   </property>
+   <property name="toolTip">
+    <string>裁剪</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>关于本程序</string>
+   </property>
+   <property name="toolTip">
+    <string>关于本程序</string>
+   </property>
+  </action>
+  <action name="action_3D">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon/icon/3D.png</normaloff>:/icon/icon/3D.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开3D文件</string>
+   </property>
+   <property name="toolTip">
+    <string>打开3D文件</string>
+   </property>
+  </action>
+  <action name="actionDrawCurve">
+   <property name="text">
+    <string>绘制曲线</string>
+   </property>
+   <property name="iconText">
+    <string>绘制曲线</string>
+   </property>
+   <property name="toolTip">
+    <string>绘制曲线</string>
+   </property>
+  </action>
+  <action name="actionText">
+   <property name="text">
+    <string>绘制曲线：</string>
+   </property>
+   <property name="toolTip">
+    <string>actionText</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
