@@ -19,7 +19,7 @@ Rectangle{
             width: parent.width
             height: parent.height
 
-            property var bankPaySearchTableArray: [["序号","发售信息","商品信息"],
+            property var bankPaySearchTableArray: [["序号","监控信息","监控状态"],
                                                        [64,256,256],
                                                        ["recordId","sellInformation","productInfo"]]
 
