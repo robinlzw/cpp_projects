@@ -14,6 +14,7 @@ ApplicationWindow {
     //color: "#87CEFA"
     color: "#6E6E6E"
 
+
     Dialog {
         id: changePosDialog;
         x:(parent.width-width)/2;

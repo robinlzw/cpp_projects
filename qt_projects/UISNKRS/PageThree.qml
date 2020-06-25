@@ -4,8 +4,8 @@ import FileIO 1.0
 Rectangle{
     id: page3Content
     color: "#6E6E6E"
-    property int row1Interval: 128
-    property int row2Interval: 72
+    property int row1Interval: parent.height/4  - 64
+    property int row2Interval: row1Interval - 48
     property int row3Interval: 48
     property int row4Interval: 4
 
@@ -28,7 +28,7 @@ Rectangle{
     Rectangle{
         id: tableRec3
         width: parent.width
-        height: 7*parent.height/10 + 32
+        height: 3*parent.height/4
 
         DataShowTable {
             id: table2

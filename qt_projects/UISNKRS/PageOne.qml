@@ -2,8 +2,8 @@ import QtQuick 2.0
 Rectangle{
     id: page1Content
     color: "#6E6E6E"
-    property int row1Interval: 128
-    property int row2Interval: 72
+    property int row1Interval: parent.height/4  - 64
+    property int row2Interval: row1Interval - 48
     property int row3Interval: 48
     property int row4Interval: 4
     visible: false
@@ -11,7 +11,7 @@ Rectangle{
     Rectangle{
         id: tableRec1
         width: parent.width
-        height: 7*parent.height/10 + 32
+        height: 3*parent.height/4
         //visible: (tabBarViewer.index == 0) ? true : false
 
         property var dataRecordJson

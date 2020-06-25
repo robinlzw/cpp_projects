@@ -34,28 +34,18 @@ Item {
 
 	Rectangle {
         id: listViewExL
-        visible: true       
-//        width: parent.height - 128 - 32
-//        height: parent.height
+        visible: true
         width: 0
         height: parent.height
 
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: parent.width / 2
-//        width: 32
-//        height: 380
-        //color: "#6E6E6E"
-        color: "green"
+        anchors.bottomMargin: -parent.height / 3
+        anchors.right: parent.right
+        anchors.rightMargin: parent.width / 3
+
 
         ListViewEx {
             id: listView
-//            width: parent.width
-//            height: 32
-//            width: 320
-//            height: 1080
-
             model: listModel
             delegate: listDelegate
             rotation: -90
@@ -73,21 +63,16 @@ Item {
 
         Component{
             id: listDelegate
-//            Rectangle{
-                BasicRadioButton{
-//                    width: 360
-//                    height: 124
-                    width: 80
-                    height: 80
-
-                    rotation:90
-                    checked: true
-                    text: model.fileName
-                    //text: "40"
-                    textColor: "purple"
-                    radioTheme: "red"
-                }
-           // }
+            BasicRadioButton{
+                width: 80
+                height: 80
+                rotation:90
+                checked: true
+                text: model.fileName
+                textColor: "purple"
+                font.pixelSize: 16
+                radioTheme: "#FFFF00"
+            }
         }
 
 
