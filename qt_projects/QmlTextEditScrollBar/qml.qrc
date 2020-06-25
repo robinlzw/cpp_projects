@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BaseButton.qml</file>
+        <file>MTabBar.qml</file>
+        <file>DataShowTable.qml</file>
+        <file>Resources/Clicked.png</file>
+        <file>Resources/notClick.png</file>
+        <file>Resources/lineEditBg.png</file>
+        <file>BasicSpinBox.qml</file>
+        <file>BasicButton.qml</file>
+    </qresource>
+</RCC>
