@@ -120,9 +120,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="uv.gyp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="test\benchmark-list.h" />
     <ClInclude Include="test\runner.h" />
     <ClInclude Include="test\task.h" />
     <ClInclude Include="test\test-list.h" />
@@ -130,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\blackhole-server.c" />
+    <ClCompile Include="test\dns-server.c" />
     <ClCompile Include="test\echo-server.c" />
     <ClCompile Include="test\run-tests.c" />
     <ClCompile Include="test\runner.c" />

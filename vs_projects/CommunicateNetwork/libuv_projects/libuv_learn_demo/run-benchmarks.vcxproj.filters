@@ -168,6 +168,5 @@
     <ClCompile Include="src\win\snprintf.c">
       <Filter>src\win</Filter>
     </ClCompile>
-    <None Include="uv.gyp"/>
   </ItemGroup>
 </Project>

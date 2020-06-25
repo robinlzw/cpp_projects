@@ -120,9 +120,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="uv.gyp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="test\benchmark-list.h" />
     <ClInclude Include="test\runner.h" />
     <ClInclude Include="test\task.h" />
