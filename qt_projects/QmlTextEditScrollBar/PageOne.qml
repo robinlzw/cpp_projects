@@ -5,8 +5,8 @@ Rectangle{
     property int row1Interval: 128
     property int row2Interval: 72
     property int row3Interval: 48
-    property int row4Interval: 2
-
+    property int row4Interval: 4
+    visible: false
 
     Rectangle{
         id: tableRec1
@@ -16,11 +16,25 @@ Rectangle{
 
         property var dataRecordJson
 
+//        DataShowTable {
+//            id: table1
+//            anchors.fill: parent
+//            width: parent.width
+//            height: parent.height
+//        }
         DataShowTable {
             id: table1
             anchors.fill: parent
             width: parent.width
             height: parent.height
+
+            property var bankPaySearchTableArray: [["序号","账号","提示信息","代理信息"],
+                                                       [64,256,256,256],
+                                                       ["recordId","accountId","promptInfo","proxyInfo"]]
+
+            Component.onCompleted: {
+               table1.createTable(bankPaySearchTableArray);    //创建表
+            }
         }
     }
 
