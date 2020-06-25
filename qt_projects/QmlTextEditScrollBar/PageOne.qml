@@ -3,8 +3,8 @@ Rectangle{
     id: page1Content
     color: "#6E6E6E"
     property int row1Interval: 128
-    property int row2Interval: 80
-    property int row3Interval: 40
+    property int row2Interval: 72
+    property int row3Interval: 48
     property int row4Interval: 2
 
 
@@ -54,7 +54,7 @@ Rectangle{
 
     Row {
         id: row1
-        spacing: (page1Content.width - 4 * 124 - 8) / 3
+        spacing: (page1Content.width - 4 * 124 - 8 - 6) / 3
 
         anchors.bottom: page1Content.bottom
         anchors.bottomMargin: row1Interval
@@ -65,12 +65,6 @@ Rectangle{
             id: clearTableButton
             width: 124
             height: 36
-
-//            anchors.bottom: parent.bottom
-//            anchors.bottomMargin: row1Interval
-//            anchors.left: parent.left
-//            anchors.leftMargin: 2
-
 
             text: "清空列表"
             textColor: "white"
@@ -86,11 +80,6 @@ Rectangle{
            width: 124
            height: 36
 
-//           anchors.bottom: parent.bottom
-//           anchors.bottomMargin: row1Interval
-//           anchors.left: clearTableButton.right
-//           anchors.leftMargin: 32
-
            text: "开始登录"
            textColor: "white"
            backgroundTheme: "#1874CD"
@@ -105,11 +94,6 @@ Rectangle{
            width: 124
            height: 36
 
-//           anchors.bottom: parent.bottom
-//           anchors.bottomMargin: row1Interval
-//           anchors.left: startLoginButton.right
-//           anchors.leftMargin: 32
-
            text: "开始加车"
            textColor: "white"
            backgroundTheme: "#1874CD"
@@ -123,11 +107,6 @@ Rectangle{
            id: startQueryButton
            width: 124
            height: 36
-
-//           anchors.bottom: parent.bottom
-//           anchors.bottomMargin: row1Interval
-//           anchors.left: startDrawButton.right
-//           anchors.leftMargin: 32
 
            text: "开始查询"
            textColor: "white"
@@ -228,5 +207,145 @@ Rectangle{
             }
         }
 
+    }
+
+    Row {
+        id: row3
+        spacing: 0
+
+        anchors.bottom: page1Content.bottom
+        anchors.bottomMargin: row3Interval
+        anchors.left: page1Content.left
+        anchors.leftMargin: 0
+
+        Canvas {
+            id: root
+            width: page1Content.width; height: 4
+            onPaint: {
+                var ctx = getContext("2d")
+                var gradient = ctx.createLinearGradient(0,0,page1Content.width,page1Content.height - row3Interval - 2)
+                gradient.addColorStop(0, "blue")
+                gradient.addColorStop(0.5, "lightsteelblue")
+                ctx.fillStyle = gradient
+                ctx.fillRect(0, 0, page1Content.width, page1Content.height - row3Interval - 2)
+            }
+        }
+    }
+
+    Row {
+        id: row4
+        //spacing: page1Content.width / 20 - 4
+        spacing: 32
+
+        anchors.bottom: page1Content.bottom
+        anchors.bottomMargin: row4Interval
+        anchors.left: page1Content.left
+        anchors.leftMargin: -16
+
+        Rectangle{
+            id: userLoginState
+            color: "#6E6E6E"
+            width: 2*page1Content.width / 10
+            height: 36
+
+            Text{
+                anchors.left: parent.left
+                //anchors.leftMargin: -2
+
+                width: 64 + 128
+                text: "状态: 没有登录"
+                font.pixelSize: 21
+                font.family: "microsoft yahei"
+                color: "white"
+                renderType: Text.NativeRendering
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                elide: Text.ElideRight
+            }
+        }
+        Rectangle{
+            id: accountNum
+            color: "#6E6E6E"
+            width: page1Content.width / 10
+            height: 36
+
+            Text{
+                anchors.left: parent.left
+                //anchors.leftMargin: -2
+
+                width: 64 + 32
+                text: "账号数: 0"
+                font.pixelSize: 21
+                font.family: "microsoft yahei"
+                color: "white"
+                renderType: Text.NativeRendering
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                elide: Text.ElideRight
+            }
+        }
+        Rectangle{
+            id: alreadyInShoppingCart
+            color: "#6E6E6E"
+            width: page1Content.width / 10
+            height: 36
+
+            Text{
+                anchors.left: parent.left
+                //anchors.leftMargin: -2
+
+                width: 64 + 32
+                text: "已加车: 0"
+                font.pixelSize: 21
+                font.family: "microsoft yahei"
+                color: "white"
+                renderType: Text.NativeRendering
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                elide: Text.ElideRight
+            }
+        }
+        Rectangle{
+            id: alreadyBuy
+            color: "#6E6E6E"
+            width: page1Content.width / 10
+            height: 36
+
+            Text{
+                anchors.left: parent.left
+                //anchors.leftMargin: -2
+
+                width: 64 + 32
+                text: "已购买: 0"
+                font.pixelSize: 21
+                font.family: "microsoft yahei"
+                color: "white"
+                renderType: Text.NativeRendering
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                elide: Text.ElideRight
+            }
+        }
+        Rectangle{
+            id: proxeyIP
+            color: "#6E6E6E"
+            width: 4*page1Content.width / 10
+            height: 36
+
+            Text{
+                anchors.left: parent.left
+                //anchors.leftMargin: -2
+
+                width: parent.width
+                text: "代理IP: 192.168.102.122"
+                font.pixelSize: 21
+                font.family: "microsoft yahei"
+                color: "white"
+                renderType: Text.NativeRendering
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                elide: Text.ElideRight
+            }
+        }
     }
 }
