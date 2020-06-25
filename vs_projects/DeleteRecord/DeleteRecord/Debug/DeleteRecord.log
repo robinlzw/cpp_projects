@@ -1,5 +1,0 @@
-﻿  stdafx.cpp
-  DeleteRecord.cpp
-d:\dev01_c++\cpp_projects\deleterecord\deleterecord\deleterecord.cpp(250): warning C4101: “objectName”: 未引用的局部变量
-d:\dev01_c++\cpp_projects\deleterecord\deleterecord\deleterecord.cpp(251): warning C4101: “returnLength”: 未引用的局部变量
-  DeleteRecord.vcxproj -> D:\Dev01_C++\cpp_projects\DeleteRecord\Debug\DeleteRecord.exe
