@@ -1,11 +1,13 @@
-import QtQuick 2.0
 import QtQuick.Controls 2.12
+import QtQuick 2.9
+import QtQuick.Window 2.2
+import QtQuick.Layouts 1.3
 
 Rectangle{
     id: page4Content
     color: "#6E6E6E"
-    property int row1Interval: 128
-    property int row2Interval: 72
+    property int row1Interval: parent.height/4  - 64
+    property int row2Interval: row1Interval - 48
     property int row3Interval: 48
     property int row4Interval: 4
 
@@ -13,7 +15,7 @@ Rectangle{
     Rectangle{
         id: tableRec4
         width: parent.width
-        height: 7*parent.height/10 + 32
+        height: 3*parent.height/4
 
         DataShowTable {
             id: table2
@@ -31,59 +33,48 @@ Rectangle{
         }
     }
 
-    /* 地图列表 */
-//    Rectangle
-//    {
-//        id: mapFileList
-//        anchors.bottom: page4Content.bottom
-//        anchors.bottomMargin: row1Interval
-//        anchors.right: page4Content.right
-//        anchors.rightMargin: 0
-//        width: 64
-//        height: 32
-//        //color: "#6E6E6E"
 
-//        LocalMapList
-//        {
-//            id: maplist
-//        }
-//    }
-    LocalMapList
-    {
+    LocalMapList {
         id: maplist
+        visible: false
     }
 
-    //默认情况下，单选按钮是自动排他的。属于同一父项的单选按钮中随时只能检查一个按钮。
-    //对于不共享公共父级的单选按钮，可以使用ButtonGroup来管理排他性。
-//    Row{
-//        spacing: 10
-//        RadioButton{
-//            checked: true
-//            text: "A"
-//        }
-//        RadioButton{
-//            text: "B"
-//        }
-//    }
-//    Row{
-//        spacing: 10
-//        BasicRadioButton{
-//            checked: true
-//            text: "First"
-//            textColor: "purple"
-//            radioTheme: "red"
-//        }
-//        BasicRadioButton{
-//            text: "Second"
-//            radius: 3
-//            radioTheme: "green"
-//        }
-//        BasicRadioButton{
-//            text: "Third"
-//            radius: 0
-//            radioTheme: "blue"
+    ProductSet {
+        id: productCategory
+        visible: false
+    }
+
+//    Window {
+//        id: window
+//        visible: false
+//        width: 360
+//        height: 360
+//        TodoList{
+//           Layout.fillWidth: true;
+//           anchors.horizontalCenter: parent.horizontalCenter
+//           anchors.verticalCenter: parent.verticalCenter
 //        }
 //    }
+    Popup
+    {
+        id:myPopup
+        width: parent.width
+        height: 3*parent.height/4
+        x:(root.width-width)/2
+        y:(root.height-height)/2 + 256
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+        TodoList{
+            width: parent.width
+            Layout.fillWidth: true;
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
+    }
+
+
 
     // ------------------------------------------------------ 底部功能区 -----------------------------------------------------------
 
@@ -107,13 +98,17 @@ Rectangle{
             backgroundTheme: "#1874CD"
 
             onClicked: {
+                //window.show()
+                myPopup.open()
                 console.log("pressed basic button");
                 maplist.clearListModel();
-
-                for(var i=35;i<45;i++){
-                   //console.log("fileName = " + data[i].fileName + ", and fileType = " + data[i].fileType);
+                var maxNum = page4Content.width / 80 - 1;
+                for(var i=35;i<35 + maxNum;i++){
+                   //console.log("fileName = " + data[i].fileName + ", and fileType = " + data[i].fileType);                   
                    var test = String(i) + "码";
                    maplist.setListModel(test, 0);
+                   var test2 = String(i) + "号";
+                   productCategory.setListModel(test2, 0);
                 }
             }
         }
