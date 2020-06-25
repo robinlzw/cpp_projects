@@ -21,6 +21,7 @@ ApplicationWindow {
         height: 64
     }
 
+
     PageOne {
         id: page1
         anchors.top: tabBarViewer.bottom
@@ -31,5 +32,42 @@ ApplicationWindow {
         width: parent.width
         height: parent.height - tabBarViewer.height
         visible: (tabBarViewer.index == 0) ? true : false
+    }
+
+    PageTwo {
+        id: page2
+        anchors.top: tabBarViewer.bottom
+        anchors.topMargin: 2
+        anchors.left: root.left
+        anchors.leftMargin: 0
+
+        width: parent.width
+        height: parent.height - tabBarViewer.height
+        visible: (tabBarViewer.index == 1) ? true : false
+    }
+
+
+    PageThree {
+        id: page3
+        anchors.top: tabBarViewer.bottom
+        anchors.topMargin: 2
+        anchors.left: root.left
+        anchors.leftMargin: 0
+
+        width: parent.width
+        height: parent.height - tabBarViewer.height
+        visible: (tabBarViewer.index == 2) ? true : false
+    }
+
+    PageFour {
+        id: page4
+        anchors.top: tabBarViewer.bottom
+        anchors.topMargin: 2
+        anchors.left: root.left
+        anchors.leftMargin: 0
+
+        width: parent.width
+        height: parent.height - tabBarViewer.height
+        visible: (tabBarViewer.index == 3) ? true : false
     }
 }

@@ -10,5 +10,8 @@
         <file>BasicSpinBox.qml</file>
         <file>BasicButton.qml</file>
         <file>PageOne.qml</file>
+        <file>PageTwo.qml</file>
+        <file>PageFour.qml</file>
+        <file>PageThree.qml</file>
     </qresource>
 </RCC>
