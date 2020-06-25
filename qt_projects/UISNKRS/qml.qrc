@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BaseButton.qml</file>
+        <file>MTabBar.qml</file>
+        <file>DataShowTable.qml</file>
+        <file>Resources/Clicked.png</file>
+        <file>Resources/notClick.png</file>
+        <file>Resources/lineEditBg.png</file>
+        <file>BasicSpinBox.qml</file>
+        <file>BasicButton.qml</file>
+        <file>PageOne.qml</file>
+        <file>PageTwo.qml</file>
+        <file>PageFour.qml</file>
+        <file>PageThree.qml</file>
+        <file>ListViewEx.qml</file>
+        <file>LocalMapList.qml</file>
+        <file>BasicRadioButton.qml</file>
+    </qresource>
+</RCC>
