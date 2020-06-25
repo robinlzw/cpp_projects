@@ -16,5 +16,7 @@
         <file>ListViewEx.qml</file>
         <file>LocalMapList.qml</file>
         <file>BasicRadioButton.qml</file>
+        <file>ProductSet.qml</file>
+        <file>TodoList.qml</file>
     </qresource>
 </RCC>
