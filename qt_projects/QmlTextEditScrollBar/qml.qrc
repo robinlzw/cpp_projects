@@ -9,5 +9,6 @@
         <file>Resources/lineEditBg.png</file>
         <file>BasicSpinBox.qml</file>
         <file>BasicButton.qml</file>
+        <file>PageOne.qml</file>
     </qresource>
 </RCC>
