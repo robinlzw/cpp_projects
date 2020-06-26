@@ -1,20 +1,20 @@
 # ImageProcessing
-图像处理自编软件 by 笔尖
+图像处理软件 (win10, vs2017)
 
-C++  OpenCV  QT 
-实现细节见：https://blog.csdn.net/u013165921/column/info/18269
+C++  OpenCV4.1.1(x64, vs2017)  QT 5.12.4
+
+仿照：https://blog.csdn.net/u013165921/column/info/18269
 
 界面
 --
 <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/1.png"  width="100%"/>
 <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/2.png"  width="100%"/>
-
 ----------
 
 工具栏、菜单栏
 -------
   <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/3.png"  width="50%"/>
-  
+
 &emsp;&emsp;文件工具栏中是常见的新建(new)、打开(open)、保存(save)、撤销(undo)、重做(redo)，实现方法将会在后续教程中给出。
 
 &emsp;&emsp;绘图工具栏可以设置画笔的线宽及颜色，其中设置画笔颜色用的是QT自带的QColorDialog。
@@ -34,14 +34,13 @@ C++  OpenCV  QT
   <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/6.png"  width="60%"/>
 
 &emsp;&emsp;视图菜单监控各个窗口的状态——显示或隐藏。通过点击菜单可以切换窗口状态， 免得关闭窗口后不知从何找起。至于图像窗口，由于该软件只能处理单张图像，不支持同时对多张图像进行处理，所以图像窗口一直保持显示状态，如果隐藏那还怎么实时查看处理结果...
- 
+
   <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/7.png"  width="60%"/>
 
 &emsp;&emsp;帮助窗口的话，就是软件的基本信息以及基本设置。
 
   <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/8.png"  width="40%"/>
   <center><img src="https://github.com/HuangBingjian/ImageProcessing/blob/master/fig/9.png"  width="40%"/></center>
-
 ----------
 
 功能窗口
