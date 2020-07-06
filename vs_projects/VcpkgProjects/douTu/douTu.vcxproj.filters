@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files\http">
+      <UniqueIdentifier>{8ee76592-949f-4778-bd84-f3b1d7aea35e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{3edc53d2-c079-4248-9f13-34fcb0dd0f59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\gumbo">
+      <UniqueIdentifier>{475d2ac7-2511-4c50-af06-efab02f910bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\gumbo\include">
+      <UniqueIdentifier>{b5b4e11d-dbdd-47bf-8c39-8ee6696a6c17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DouTu.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtMoc Include="DouTu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="DouTu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CellWgt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RequestThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="header\http\QtHttpRequest.cpp">
+      <Filter>Header Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\Document.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\Node.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\Object.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\QParser.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\QueryUtil.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\Selection.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="header\include\gumbo\Selector.cpp">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CellWgt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="RequestThread.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HttpHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\http\HttpRequest.h">
+      <Filter>Header Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="header\http\QtHttpRequest.h">
+      <Filter>Header Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\include\strings.h">
+      <Filter>Header Files\include\gumbo\include</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\attribute.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\char_ref.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\Document.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\error.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\gumbo.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\insertion_mode.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\Node.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\Object.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\parser.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\QParser.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\QueryUtil.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\Selection.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\Selector.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\string_buffer.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\string_piece.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tag_enum.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tag_gperf.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tag_sizes.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tag_strings.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\token_type.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tokenizer.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\tokenizer_states.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\utf8.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\util.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="header\include\gumbo\vector.h">
+      <Filter>Header Files\include\gumbo</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

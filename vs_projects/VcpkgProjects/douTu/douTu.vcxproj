@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{96A2E042-E495-4924-89DB-3F7DFBC4950E}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="header\http\QtHttpRequest.cpp" />
+    <ClCompile Include="header\include\gumbo\Document.cpp" />
+    <ClCompile Include="header\include\gumbo\Node.cpp" />
+    <ClCompile Include="header\include\gumbo\Object.cpp" />
+    <ClCompile Include="header\include\gumbo\QParser.cpp" />
+    <ClCompile Include="header\include\gumbo\QueryUtil.cpp" />
+    <ClCompile Include="header\include\gumbo\Selection.cpp" />
+    <ClCompile Include="header\include\gumbo\Selector.cpp" />
+    <ClCompile Include="RequestThread.cpp" />
+    <QtRcc Include="DouTu.qrc" />
+    <QtMoc Include="DouTu.h" />
+    <ClCompile Include="CellWgt.cpp" />
+    <ClCompile Include="DouTu.cpp" />
+    <ClCompile Include="HttpHelper.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CellWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\http\HttpRequest.h" />
+    <ClInclude Include="header\http\QtHttpRequest.h" />
+    <ClInclude Include="header\include\gumbo\attribute.h" />
+    <ClInclude Include="header\include\gumbo\char_ref.h" />
+    <ClInclude Include="header\include\gumbo\Document.h" />
+    <ClInclude Include="header\include\gumbo\error.h" />
+    <ClInclude Include="header\include\gumbo\gumbo.h" />
+    <ClInclude Include="header\include\gumbo\include\strings.h" />
+    <ClInclude Include="header\include\gumbo\insertion_mode.h" />
+    <ClInclude Include="header\include\gumbo\Node.h" />
+    <ClInclude Include="header\include\gumbo\Object.h" />
+    <ClInclude Include="header\include\gumbo\parser.h" />
+    <ClInclude Include="header\include\gumbo\QParser.h" />
+    <ClInclude Include="header\include\gumbo\QueryUtil.h" />
+    <ClInclude Include="header\include\gumbo\Selection.h" />
+    <ClInclude Include="header\include\gumbo\Selector.h" />
+    <ClInclude Include="header\include\gumbo\string_buffer.h" />
+    <ClInclude Include="header\include\gumbo\string_piece.h" />
+    <ClInclude Include="header\include\gumbo\tag_enum.h" />
+    <ClInclude Include="header\include\gumbo\tag_gperf.h" />
+    <ClInclude Include="header\include\gumbo\tag_sizes.h" />
+    <ClInclude Include="header\include\gumbo\tag_strings.h" />
+    <ClInclude Include="header\include\gumbo\tokenizer.h" />
+    <ClInclude Include="header\include\gumbo\tokenizer_states.h" />
+    <ClInclude Include="header\include\gumbo\token_type.h" />
+    <ClInclude Include="header\include\gumbo\utf8.h" />
+    <ClInclude Include="header\include\gumbo\util.h" />
+    <ClInclude Include="header\include\gumbo\vector.h" />
+    <ClInclude Include="HttpHelper.h" />
+    <QtMoc Include="RequestThread.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

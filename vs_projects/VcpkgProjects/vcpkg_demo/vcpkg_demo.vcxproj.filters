@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{021a4d81-e948-47c5-b63c-ab834903a6d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{53b27a16-5a93-439b-91b8-272f8a2022cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{c34a91e6-aae7-48a8-b535-b603b0b7b81e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gumbo">
+      <UniqueIdentifier>{e383f7a3-3c59-4ba8-800b-d607874045d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gumbo\include">
+      <UniqueIdentifier>{ca35ed53-b14f-45ce-85d5-6517e2d37a27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\crawler_test1.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crawler_test2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eventPool_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\json_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyStringFormat.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spdlog_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="include\graphbase.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="include\tinyxml2.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\Document.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\Node.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\Object.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\QParser.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\QueryUtil.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\Selection.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gumbo\Selector.cpp">
+      <Filter>include\gumbo</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\crawler_test1.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\crawler_test2.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\eventPool_test.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\json_test.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\MyStringFormat.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\spdlog_test.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\closedPointPair.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\computeSegsDistance.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\eventPool.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\graphbase.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ramerDouglasPeucker.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tinyxml2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\include\strings.h">
+      <Filter>include\gumbo\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\attribute.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\char_ref.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\Document.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\error.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\gumbo.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\insertion_mode.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\Node.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\Object.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\parser.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\QParser.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\QueryUtil.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\Selection.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\Selector.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\string_buffer.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\string_piece.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tag_enum.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tag_gperf.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tag_sizes.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tag_strings.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\token_type.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tokenizer.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\tokenizer_states.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\utf8.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\util.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo\vector.h">
+      <Filter>include\gumbo</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
