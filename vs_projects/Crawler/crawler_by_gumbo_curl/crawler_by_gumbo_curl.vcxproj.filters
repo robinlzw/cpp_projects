@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lib">
+      <UniqueIdentifier>{69160ef4-0935-42d9-bd62-de23de9712a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{f4632d7a-cc16-479a-a74f-b4fb367779ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\curl">
+      <UniqueIdentifier>{3c7926ce-2175-429f-861e-14fc5ce5487c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\json">
+      <UniqueIdentifier>{553f8ab6-c332-4a13-9adf-fe79f90f5631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\nghttp2">
+      <UniqueIdentifier>{41289474-e6fa-4e81-bbcb-657c7f919e21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\gumbo.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="lib\jsoncpp.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="lib\libcurl.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="lib\nghttp2.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="lib\zlib.lib">
+      <Filter>lib</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\curl\curl.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\curlver.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\easy.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\mprintf.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\multi.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\stdcheaders.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\system.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\typecheck-gcc.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\curl\urlapi.h">
+      <Filter>include\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\allocator.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\assertions.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\autolink.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\config.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\features.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\forwards.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\json.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\reader.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\value.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\version.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\writer.h">
+      <Filter>include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nghttp2\nghttp2.h">
+      <Filter>include\nghttp2</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nghttp2\nghttp2ver.h">
+      <Filter>include\nghttp2</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gumbo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tag_enum.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\zconf.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\zlib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>
