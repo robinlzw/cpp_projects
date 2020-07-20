@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/picture">
+        <file alias="hero">hero.png</file>
+    </qresource>
+</RCC>
