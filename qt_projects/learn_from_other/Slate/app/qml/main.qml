@@ -17,10 +17,14 @@
     along with Slate. If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
+//import QtQuick 2.12
+//import QtQuick.Layouts 1.12
+//import QtQuick.Window 2.12
+//import QtQuick.Controls 2.12
+import QtQuick 2.3
+import QtQuick.Window 2.0
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.2
 
 import Qt.labs.settings 1.0
 import Qt.labs.platform 1.0 as Platform
@@ -155,132 +159,131 @@ ApplicationWindow {
         }
     }
 
-//    Ui.Shortcuts {
-//        window: window
-//        canvasContainer: canvasContainer
-//        canvas: window.canvas
-//        saveChangesDialog: saveChangesDialog
-//    }
-
-    menuBar: Ui.MenuBar {
-        id: menuBar
+    Ui.Shortcuts {
+        window: window
+        canvasContainer: canvasContainer
         canvas: window.canvas
-        hueSaturationDialog: hueSaturationDialog
-        opacityDialog: opacityDialog
-        canvasSizePopup: canvasSizePopup
-        imageSizePopup: imageSizePopup
-        moveContentsDialog: moveContentsDialog
-        texturedFillSettingsDialog: texturedFillSettingsDialog
-        aboutDialog: aboutDialog
         saveChangesDialog: saveChangesDialog
     }
 
-    header: Ui.ToolBar {
-        id: toolBar
-        objectName: "toolBar"
-        project: window.project
-        canvas: window.canvas
-        canvasSizePopup: canvasSizePopup
-        imageSizePopup: imageSizePopup
-    }
+//    menuBar: Ui.MenuBar {
+//        id: menuBar
+//        canvas: window.canvas
+//        hueSaturationDialog: hueSaturationDialog
+//        opacityDialog: opacityDialog
+//        canvasSizePopup: canvasSizePopup
+//        imageSizePopup: imageSizePopup
+//        moveContentsDialog: moveContentsDialog
+//        texturedFillSettingsDialog: texturedFillSettingsDialog
+//        aboutDialog: aboutDialog
+//        saveChangesDialog: saveChangesDialog
+//    }
 
-//    SplitView {
-//        id: mainSplitView
-//        objectName: "mainSplitView"
-//        anchors.fill: parent
-//        handle: Item {
-//            implicitWidth: 4
-//        }
+//    header: Ui.ToolBar {
+//        id: toolBar
+//        objectName: "toolBar"
+//        project: window.project
+//        canvas: window.canvas
+//        canvasSizePopup: canvasSizePopup
+//        imageSizePopup: imageSizePopup
+//    }
 
-//        Layout.fillWidth: true
+    SplitView {
+        id: mainSplitView
+        objectName: "mainSplitView"
+        anchors.fill: parent
+        handleDelegate: Item {
+            implicitWidth: 4
+        }
 
-//        Ui.CanvasContainer {
-//            id: canvasContainer
-//            focus: true
+        Layout.fillWidth: true
+
+        Ui.CanvasContainer {
+            id: canvasContainer
+            focus: true
 
 //            checkedToolButton: toolBar.toolButtonGroup.checkedButton
-
 //            SplitView.preferredWidth: window.width / 3
 //            SplitView.fillWidth: true
-//        }
+        }
 
-//        SplitView {
-//            id: panelSplitView
-//            objectName: "panelSplitView"
-//            orientation: Qt.Vertical
-//            handle: Item {
-//                implicitHeight: 4
-//            }
+        SplitView {
+            id: panelSplitView
+            objectName: "panelSplitView"
+            orientation: Qt.Vertical
+            handleDelegate: Item {
+                implicitHeight: 4
+            }
 
-//            readonly property int defaultPreferredWidth: 240
+            readonly property int defaultPreferredWidth: 240
 
 //            SplitView.minimumWidth: 200
 //            SplitView.preferredWidth: defaultPreferredWidth
 //            SplitView.maximumWidth: window.width / 3
 
-//            Ui.ColourPanel {
-//                id: colourPanel
-//                canvas: window.canvas
-//                project: window.project
+            Ui.ColourPanel {
+                id: colourPanel
+                canvas: window.canvas
+                project: window.project
 
 //                SplitView.minimumHeight: expanded ? minimumUsefulHeight : undefined
 //                SplitView.maximumHeight: expanded ? implicitHeight : header.implicitHeight
-//            }
+            }
 
-//            Ui.SwatchPanel {
-//                id: swatchesPanel
-//                canvas: window.canvas
-//                project: window.project
+            Ui.SwatchPanel {
+                id: swatchesPanel
+                canvas: window.canvas
+                project: window.project
 
 //                SplitView.minimumHeight: expanded ? minimumUsefulHeight : undefined
 //                SplitView.preferredHeight: minimumUsefulHeight + 100
 //                SplitView.maximumHeight: expanded ? Infinity : header.implicitHeight
-//            }
+            }
 
-//            Loader {
-//                objectName: "tilesetSwatchLoader"
-//                active: window.projectType === Project.TilesetType && window.canvas
-//                visible: active
-//                sourceComponent: Ui.TilesetSwatchPanel {
-//                    id: tilesetSwatch
-//                    tileCanvas: window.canvas
-//                    project: window.project
-//                    // Don't let e.g. the pencil icon go under us.
-//                    z: canvasContainer.z - 1
-//                }
+            Loader {
+                objectName: "tilesetSwatchLoader"
+                active: window.projectType === Project.TilesetType && window.canvas
+                visible: active
+                sourceComponent: Ui.TilesetSwatchPanel {
+                    id: tilesetSwatch
+                    tileCanvas: window.canvas
+                    project: window.project
+                    // Don't let e.g. the pencil icon go under us.
+                    z: canvasContainer.z - 1
+                }
 
 //                SplitView.minimumHeight: active && item.expanded ? item.header.implicitHeight : undefined
 //                SplitView.maximumHeight: active ? (item.expanded ? Infinity : item.header.implicitHeight) : 0
 //                SplitView.fillHeight: active && item.expanded
-//            }
+            }
 
-//            Loader {
-//                objectName: "layersLoader"
-//                active: window.projectType === Project.LayeredImageType && window.canvas
-//                visible: active
-//                sourceComponent: Ui.LayerPanel {
-//                    layeredImageCanvas: window.canvas
-//                    project: window.project
-//                    z: canvasContainer.z - 1
-//                }
+            Loader {
+                objectName: "layersLoader"
+                active: window.projectType === Project.LayeredImageType && window.canvas
+                visible: active
+                sourceComponent: Ui.LayerPanel {
+                    layeredImageCanvas: window.canvas
+                    project: window.project
+                    z: canvasContainer.z - 1
+                }
 
 //                SplitView.minimumHeight: active && item.expanded ? item.minimumUsefulHeight : undefined
 //                SplitView.maximumHeight: active ? (item.expanded ? Infinity : item.header.implicitHeight) : 0
 //                SplitView.fillHeight: active && item.expanded
-//            }
+            }
 
-//            Ui.AnimationPanel {
-//                id: animationPanel
-//                visible: window.project && window.project.loaded && isImageProjectType && window.project.usingAnimation
-//                project: visible ? window.project : null
-//                canvas: window.canvas
+            Ui.AnimationPanel {
+                id: animationPanel
+                visible: window.project && window.project.loaded && isImageProjectType && window.project.usingAnimation
+                project: visible ? window.project : null
+                canvas: window.canvas
 
 //                SplitView.minimumHeight: expanded ? minimumUsefulHeight : undefined
 //                SplitView.maximumHeight: visible ? (expanded ? Infinity : header.implicitHeight) : 0
 //                SplitView.fillHeight: expanded
-//            }
-//        }
-//    }
+            }
+        }
+    }
 
     readonly property var imageFilters: ["PNG files (*.png)", "BMP files (*.bmp)"]
     readonly property var layeredImageFilters: ["SLP files (*.slp)"]
