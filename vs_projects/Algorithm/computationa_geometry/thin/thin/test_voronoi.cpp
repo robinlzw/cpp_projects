@@ -581,6 +581,150 @@ void testThin() {
 	cv::waitKey(0);
 }
 
+void cvRosenfeld(cv::Mat& src, cv::Mat& dst, std::vector<cv::Point>& nodePosVec) {
+	if (src.type() != CV_8UC1) {
+		printf("只能处理二值或灰度图像\n");
+		return;
+	}
+	//非原地操作时候，copy src到dst
+	if (dst.data != src.data) {
+		src.copyTo(dst);
+	}
+	int i, j, n, width, height;
+	//之所以减1，是方便处理8邻域，防止越界
+	width = src.cols - 1;
+	height = src.rows - 1;
+	int step = src.step;
+	int  p2, p3, p4, p5, p6, p7, p8, p9;
+	uchar* img;
+	bool ifEnd;
+	cv::Mat tmpimg;
+	int dir[4] = { -step, step, 1, -1 };
+	while (1) {
+		//分四个子迭代过程，分别对应北，南，东，西四个边界点的情况
+		ifEnd = false;
+		for (n = 0; n < 4; n++) {
+			dst.copyTo(tmpimg);
+			img = tmpimg.data;
+			for (i = 1; i < height; i++) {
+				img += step;
+				for (j = 1; j < width; j++) {
+					uchar* p = img + j;
+					//如果p点是背景点或者且为方向边界点，依次为北南东西，继续循环
+					if (p[0] == 0 || p[dir[n]] > 0) continue;
+					p2 = p[-step] > 0 ? 1 : 0;
+					p3 = p[-step + 1] > 0 ? 1 : 0;
+					p4 = p[1] > 0 ? 1 : 0;
+					p5 = p[step + 1] > 0 ? 1 : 0;
+					p6 = p[step] > 0 ? 1 : 0;
+					p7 = p[step - 1] > 0 ? 1 : 0;
+					p8 = p[-1] > 0 ? 1 : 0;
+					p9 = p[-step - 1] > 0 ? 1 : 0;
+					//8 simple判定
+					int is8simple = 1;
+					if (p2 == 0 && p6 == 0) {
+						if ((p9 == 1 || p8 == 1 || p7 == 1) && (p3 == 1 || p4 == 1 || p5 == 1))
+							is8simple = 0;
+					}
+					if (p4 == 0 && p8 == 0) {
+						if ((p9 == 1 || p2 == 1 || p3 == 1) && (p5 == 1 || p6 == 1 || p7 == 1))
+							is8simple = 0;
+					}
+					if (p8 == 0 && p2 == 0) {
+						if (p9 == 1 && (p3 == 1 || p4 == 1 || p5 == 1 || p6 == 1 || p7 == 1))
+							is8simple = 0;
+					}
+					if (p4 == 0 && p2 == 0) {
+						if (p3 == 1 && (p5 == 1 || p6 == 1 || p7 == 1 || p8 == 1 || p9 == 1))
+							is8simple = 0;
+					}
+					if (p8 == 0 && p6 == 0) {
+						if (p7 == 1 && (p3 == 9 || p2 == 1 || p3 == 1 || p4 == 1 || p5 == 1))
+							is8simple = 0;
+					}
+					if (p4 == 0 && p6 == 0) {
+						if (p5 == 1 && (p7 == 1 || p8 == 1 || p9 == 1 || p2 == 1 || p3 == 1))
+							is8simple = 0;
+					}
+					int adjsum;
+					adjsum = p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9;
+					
+					//判断是否是邻接点或孤立点,0,1分别对于那个孤立点和端点
+					if (adjsum == 1) {
+						nodePosVec.push_back(cv::Point((i, j)));
+					}
+
+					if (adjsum != 1 && adjsum != 0 && is8simple == 1) {
+						dst.at<uchar>(i, j) = 0; //满足删除条件，设置当前像素为0
+						ifEnd = true;
+					}		
+				}
+			}
+		}
+		//已经没有可以细化的像素了，则退出迭代
+		if (!ifEnd) break;
+	}
+}
+
+int test_cvRosenfeld() {
+	std::vector<std::vector<cv::Point>> contours;
+	std::vector<std::vector<cv::Point>> hull_contours;
+
+	Mat src = imread("./zhenbei_0701_f1_nav.png", 0);
+	threshold(src, src, 128, 255, 0);//注意一定要化二值，不仅是灰度图
+	//imshow("abc", src);
+
+	//写法1
+	cv::findContours(src, contours, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
+	std::sort(contours.begin(), contours.end(), compareContourAreas);
+
+	cv::Mat tmp_img;
+	src.copyTo(tmp_img);
+	time_t t;
+	srand((unsigned)time(&t));
+
+	for (unsigned int i = 0; i < contours.size() - 1; ++i) {
+		{
+			Scalar color = Scalar(rand() % 255, rand() % 255, rand() % 255);
+			//vector<cv::Point> hullPoints;
+			//hull_contours.push_back(hullPoints);
+			//cv::convexHull(contours[i], hullPoints, true);  //approxPolyDP convexHull
+			//cv::polylines(tmp_img, hullPoints, true, color, 2);
+			//RotatedRect rrt = minAreaRect(contours[i]);
+			//Point2f pts[4];
+			//rrt.points(pts);
+
+			//// 绘制旋转矩形
+			//for (int i = 0; i < 4; i++) {
+			//	line(tmp_img, pts[i % 4], pts[(i + 1) % 4], Scalar(0, 0, 255), 2, 8, 0);				
+			//}
+			cv::drawContours(tmp_img, contours, i, Scalar(0), CV_FILLED, 8, vector<Vec4i>(), 0, Point());
+		}
+	}
+
+	//for (unsigned int i = 0; i < hull_contours.size() - 1; ++i) {
+	//	cv::fillPoly(tmp_img, hull_contours[i], Scalar(0), 8, 4);
+	//}
+
+	//写法2
+	//findContours(src, contours, RETR_TREE, CHAIN_APPROX_NONE);
+	//drawContours(src, contours, -1, Scalar(0, 255, 0), 1);
+
+	//imshow("tmp_img", tmp_img);
+	cv::imwrite("./abc.png", tmp_img);
+	Mat dst; 
+	std::vector<cv::Point> nodePosVec;
+	cvRosenfeld(tmp_img, dst, nodePosVec);
+	cout << "nodePosVec.size() = " << nodePosVec.size();
+	for (auto pos : nodePosVec) {
+		circle(dst, pos, 8, Scalar(128), 4, 8, 0);
+	}
+	
+	imshow("def", dst);
+	cv::imwrite("./def.png", dst);
+	waitKey(0);
+	return 0;
+}
 
 int main(int argc, char** argv) {
   // benchmark_logs(cv::imread(IMG_DIR "depth/juggling1_user_mask.png", CV_LOAD_IMAGE_GRAYSCALE));
@@ -607,6 +751,7 @@ int main(int argc, char** argv) {
   //                          true, 2, "comparer_power_");
   //return CLI(argc, argv);
 	
-	testThin();
+	//testThin();
+	test_cvRosenfeld();
 	return 0;
 }
