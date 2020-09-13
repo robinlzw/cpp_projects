@@ -670,7 +670,7 @@ int test_cvRosenfeld() {
 	std::vector<std::vector<cv::Point>> contours;
 	std::vector<std::vector<cv::Point>> hull_contours;
 
-	Mat src = imread("./zhenbei_0701_f1_nav.png", 0);
+	Mat src = imread("./test_map.png", 0);
 	threshold(src, src, 128, 255, 0);//注意一定要化二值，不仅是灰度图
 	//imshow("abc", src);
 
