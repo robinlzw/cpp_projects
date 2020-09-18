@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3fdc8edc-b1ea-4dc8-af1b-855fecd31d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\loadpng">
+      <UniqueIdentifier>{c49837dd-e596-4338-8c51-41df3feb2872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="images">
+      <UniqueIdentifier>{d676f3b9-acfd-43b1-88ec-4051f1475d22}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pixel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PNG.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\skeleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lodepng\lodepng.cpp">
+      <Filter>src\loadpng</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pixel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PNG.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lodepng\lodepng.h">
+      <Filter>src\loadpng</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\apple.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\batman.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\cursive.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\discord.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\hansolo.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\rose.png">
+      <Filter>images</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
