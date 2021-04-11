@@ -34,19 +34,34 @@ Window
 
         color: "transparent"
 
+        Text {
+            id: tips
+            text: "lzw love gh"
+            color: "red"
+            font.bold: true
+            font.family: "Microsoft YaHei"
+            font.pixelSize: 9
+
+            visible: false
+        }
+
         MagicPool
         {
             id: magicPool
             anchors.fill: parent
 
+            property int fish_pos_x: 0
+            property int fish_pos_y: 0
+
             function randomMove()
             {
-                var r_x = Math.random() * width;
-                var r_y = Math.random() * height;
+                magicPool.fish_pos_x = Math.random() * width;
+                magicPool.fish_pos_y = Math.random() * height;
                 showWindow.x = Math.random() * mainWindow.width;
                 showWindow.y = Math.random() * mainWindow.height;
-                magicPool.moveFish(r_x, r_y, false);
+                magicPool.moveFish(magicPool.fish_pos_x, magicPool.fish_pos_y, false);
                 console.log("randomMove")
+                tips.visible = false
             }
 
             Timer
@@ -68,8 +83,11 @@ Window
                 propagateComposedEvents: true
                 onClicked: magicPool.moveFish(mouse.x, mouse.y, true);
                 onReleased: {
-                   console.log("menu.released")
-                   mouse.accepted = false
+                    console.log("menu.released")
+                    mouse.accepted = false
+                    tips.visible = true
+                    tips.x = mouse.x
+                    tips.y = mouse.y
                 }
             }
         }
